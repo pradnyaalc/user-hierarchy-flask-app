@@ -1,0 +1,35 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "type": "object",
+    "title": "Employee Schema",
+    "description": "The schema to validate the input employees given in json format",
+    "required": [
+        "Id",
+        "Name",
+        "Role"
+    ],
+    "properties": {
+        "Id": {
+            "type": "integer",
+            "description": "the unique identifier of a role",
+            "examples": [
+                5
+            ]
+        },
+        "Name": {
+            "type": "string",
+            "description": "Specifies the name of the role",
+            "examples": [
+                "System Administrator"
+            ]
+        },
+        "Role": {
+            "type": "integer",
+            "description": "It represents a valid role id present in the roles data",
+            "examples": [
+                2
+            ]
+        }
+    },
+    "additionalProperties": false
+}

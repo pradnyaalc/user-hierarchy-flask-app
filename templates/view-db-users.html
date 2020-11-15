@@ -1,0 +1,62 @@
+{% extends 'main.html' %}
+
+{% block body %}
+
+<div class="row">
+    <div class="col-md-8 col-md-offset-2">
+        <div class="box box-warning">
+            <div class="box-header with-border">
+                <h3 class="box-title">Employee Information</h3>
+            </div>
+            <div class="box-body">
+                <form role="form" action="" method="post">
+                    <div class="form-group">
+                        <label>Select an employee!</label>
+                        <select class="form-control" name="user">
+                            {% for user in all_users %}
+                                <option value="{{ user.2 , user.1 }}">{{ user.0 }}. {{ user.1 }} ({{ user.2 }})</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+            <div class="box-body">
+                <h2 class="page-header"><strong> Employee subordinates </strong></h2>
+
+                <table style="width:50%">
+                    <tr>
+                        <th>Employee Name</th>
+                        <th>Employee Role</th>
+                    </tr>
+                    {% for emp in sub_data%}
+                    <tr>
+                        <td>{{ emp.0 }}</td>
+                        <td>{{ emp.1 }}</td>
+                    </tr>
+                    {% endfor %}
+
+                </table>
+            </div>
+            <div class="box-body">
+                <h2 class="page-header"><strong> Average Salary based on selected employee role </strong></h2>
+
+                <table style="width:50%">
+                    <tr>
+                        <th>Role Name</th>
+                        <th>Average Salary</th>
+                    </tr>
+                    <tr>
+                        <td>{{ avg_data.0 }}</td>
+                        <td>{{ avg_data.1 }}</td>
+                    </tr>
+
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock %}

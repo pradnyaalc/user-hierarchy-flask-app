@@ -1,0 +1,8 @@
+id,name,parentId
+1,Head of Content,Null
+2,Content Creating Lead,1
+3,Content Reviewer Lead,1
+4,Editor,1
+5,Reviewer,3
+6,Journalist,2
+7,Intern,6

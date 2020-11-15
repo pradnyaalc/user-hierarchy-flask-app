@@ -1,0 +1,17 @@
+attrs==20.3.0
+click==7.1.2
+Flask==1.1.2
+Flask-Ext==0.1
+Flask-MySQL==1.5.1
+Flask-MySQLdb==0.2.0
+importlib-metadata==2.0.0
+Jinja2==2.11.2
+jproperties==2.1.0
+jsonschema==3.2.0
+MarkupSafe==1.1.1
+mysql==0.0.2
+mysql-connector-python==8.0.22
+mysqlclient==2.0.1
+protobuf==3.14.0
+PyMySQL==0.10.1
+pyrsistent==0.17.3

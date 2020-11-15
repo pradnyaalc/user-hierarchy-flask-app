@@ -1,0 +1,35 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "type": "object",
+    "title": "Roles Schema",
+    "description": "The schema to validate the input roles given in json format",
+    "required": [
+        "Id",
+        "Name",
+        "Parent"
+    ],
+    "properties": {
+        "Id": {
+            "type": "integer",
+            "description": "the unique identifier of a role",
+            "examples": [
+                5
+            ]
+        },
+        "Name": {
+            "type": "string",
+            "description": "Specifies the name of the role",
+            "examples": [
+                "System Administrator"
+            ]
+        },
+        "Parent": {
+            "type": "integer",
+            "description": "It represents the parent of the current role",
+            "examples": [
+                2
+            ]
+        }
+    },
+    "additionalProperties": false
+}
