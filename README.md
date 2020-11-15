@@ -3,7 +3,10 @@ Web application displays the employees of an organization known as Best Company 
 The application reads the input data in the form of json files and displays an employee hierarchy based on the role of the employee
 
 ## Pre-requisites
-* Install MySQL version 5.7
+* Install MySQL version 5.7 from
+```
+https://dev.mysql.com/downloads/installer/
+```
 * Create a username and password for the MySQL DB
 * Python 3.7
 
@@ -23,8 +26,9 @@ The input_files directory consists of the json data for roles and employees as w
 The folder also consists of the roles and employees data in the CSV format that are inserted in the MySQL DB. 
 
 #### 4. Configuration files
-The config folder consists of the default_config properties file which is of the form key=value.
-It consists of all the necessary configuration required for the application
+* The config folder consists of the default_config properties file which is of the form key=value.
+* It consists of all the necessary configuration required for the application.
+* Update the configuration values for MYSQL username, password, and host.
 
 #### 3. Run the Flask Application with the properties file as the argument
 ```bash
@@ -41,6 +45,8 @@ python EmployeeController.py config/default_config.properties
 #### 5. Running the unit tests
 python -m unittest discover -s tests
 
+## Deployments Steps
+Will be updated soon
 
 
 
