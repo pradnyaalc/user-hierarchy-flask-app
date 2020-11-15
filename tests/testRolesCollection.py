@@ -5,11 +5,11 @@ from models import Role
 
 class TestRolesCollection(unittest.TestCase):
     def test_read_data_and_build_hierarchy(self):
-        with open('../input_files/roles.json') as f:
+        with open('input_files/roles.json') as f:
             roles = json.load(f)
 
         roles_collect = RolesCollection()
-        roles_collect.read_data_and_build_hierarchy(roles, '../input_files/schema/roles_schema.json')
+        roles_collect.read_data_and_build_hierarchy(roles, 'input_files/schema/roles_schema.json')
 
         self.assertIsInstance(roles_collect.root, Role)
         self.assertEqual(roles_collect.root.id, 1)
@@ -22,15 +22,15 @@ class TestRolesCollection(unittest.TestCase):
 
         roles_collect = RolesCollection()
         with self.assertRaises(Exception) as context:
-            roles_collect.read_data_and_build_hierarchy(roles, '../input_files/schema/roles_schema.json')
+            roles_collect.read_data_and_build_hierarchy(roles, 'input_files/schema/roles_schema.json')
         self.assertEqual('Error in the given json file', context.exception.__str__())
 
     def test_get_subordinates(self):
-        with open('../input_files/roles.json') as f:
+        with open('input_files/roles.json') as f:
             roles = json.load(f)
 
         roles_collect = RolesCollection()
-        roles_collect.read_data_and_build_hierarchy(roles, '../input_files/schema/roles_schema.json')
+        roles_collect.read_data_and_build_hierarchy(roles, 'input_files/schema/roles_schema.json')
 
         roles_collection = roles_collect.get_roles_collection()
         parent = roles_collection[3]
@@ -42,11 +42,11 @@ class TestRolesCollection(unittest.TestCase):
             self.assertTrue(role.id in expected_sub_ids)
 
     def test_get_subordinates_for_random_role(self):
-        with open('../input_files/roles.json') as f:
+        with open('input_files/roles.json') as f:
             roles = json.load(f)
 
         roles_collect = RolesCollection()
-        roles_collect.read_data_and_build_hierarchy(roles, '../input_files/schema/roles_schema.json')
+        roles_collect.read_data_and_build_hierarchy(roles, 'input_files/schema/roles_schema.json')
 
         parent = Role(6, 'Intern', 0)
 
@@ -56,11 +56,11 @@ class TestRolesCollection(unittest.TestCase):
         self.assertEqual('Parent node does not exists in the given json data', context.exception.__str__())
 
     def test_get_subordinates_by_id(self):
-        with open('../input_files/roles.json') as f:
+        with open('input_files/roles.json') as f:
             roles = json.load(f)
 
         roles_collect = RolesCollection()
-        roles_collect.read_data_and_build_hierarchy(roles, '../input_files/schema/roles_schema.json')
+        roles_collect.read_data_and_build_hierarchy(roles, 'input_files/schema/roles_schema.json')
 
         immediate_subordinate = roles_collect.get_subordinate_by_id(2)
 
